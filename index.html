@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramiz Theba × Forbidden Linker — LinkedIn Growth Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Sora:wght@200;300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-void: #06080a;
+  --bg-deep: #0b0e12;
+  --bg-surface: #111519;
+  --bg-card: #161b21;
+  --bg-elevated: #1c2229;
+
+  --text-primary: #e8ecf0;
+  --text-secondary: #7a8594;
+  --text-dim: #4a5568;
+  --text-accent: #c8d6e5;
+
+  --mint: #34d399;
+  --mint-glow: rgba(52, 211, 153, 0.15);
+  --mint-dim: rgba(52, 211, 153, 0.08);
+  --cyan: #22d3ee;
+  --cyan-glow: rgba(34, 211, 238, 0.12);
+  --amber: #fbbf24;
+  --amber-glow: rgba(251, 191, 36, 0.1);
+  --red-soft: #f87171;
+  --red-glow: rgba(248, 113, 113, 0.08);
+
+  --border: rgba(255,255,255,0.06);
+  --border-active: rgba(52, 211, 153, 0.2);
+
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Sora', -apple-system, sans-serif;
+  --mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  font-size: 17px;
+  scroll-behavior: smooth;
+  background: var(--bg-void);
+}
+
+body {
+  background: var(--bg-void);
+  color: var(--text-primary);
+  font-family: var(--sans);
+  font-weight: 300;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(52, 211, 153, 0.25);
+  color: var(--text-primary);
+}
+
+/* ── NOISE TEXTURE ── */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── GRID BACKGROUND ── */
+.grid-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    linear-gradient(rgba(52, 211, 153, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(52, 211, 153, 0.018) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 20%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── AMBIENT GLOW ORBS ── */
+.orbs {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  animation: drift 25s ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 500px; height: 500px;
+  background: rgba(52, 211, 153, 0.06);
+  top: -15%; right: -5%;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 400px; height: 400px;
+  background: rgba(34, 211, 238, 0.05);
+  top: 40%; left: -10%;
+  animation-delay: -8s;
+}
+
+.orb-3 {
+  width: 350px; height: 350px;
+  background: rgba(251, 191, 36, 0.04);
+  bottom: 10%; right: -5%;
+  animation-delay: -16s;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(25px, -20px) scale(1.05); }
+  66% { transform: translate(-15px, 15px) scale(0.95); }
+}
+
+/* ── MAIN CONTAINER ── */
+.proposal {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* ── HEADER ── */
+.header {
+  text-align: center;
+  padding: 80px 0 70px;
+  position: relative;
+}
+
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--mint);
+  background: var(--mint-dim);
+  border: 1px solid rgba(52, 211, 153, 0.15);
+  border-radius: 100px;
+  padding: 8px 20px;
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: fade-up 0.7s var(--ease-out) 0.2s forwards;
+}
+
+.header-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 10px var(--mint);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.header-prepared {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fade-up 0.7s var(--ease-out) 0.35s forwards;
+}
+
+.header h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 3.6rem;
+  line-height: 1.12;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: fade-up 0.7s var(--ease-out) 0.5s forwards;
+}
+
+.header h1 .name {
+  color: var(--mint);
+  font-style: italic;
+}
+
+.header-tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.35rem;
+  color: var(--text-secondary);
+  opacity: 0;
+  animation: fade-up 0.7s var(--ease-out) 0.65s forwards;
+}
+
+.header-line {
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--mint), transparent);
+  margin: 36px auto 0;
+  opacity: 0;
+  animation: fade-up 0.7s var(--ease-out) 0.8s forwards;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── SECTIONS ── */
+.section {
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-num {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.section-num::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+/* ── THE UPWORK TAX (Pain Section) ── */
+.tax-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.tax-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 26px 22px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.4s, transform 0.3s var(--ease-out);
+}
+
+.tax-card:hover {
+  border-color: var(--border-active);
+  transform: translateY(-2px);
+}
+
+.tax-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--red-soft), transparent);
+  opacity: 0.5;
+}
+
+.tax-card.highlight-bad::before {
+  background: linear-gradient(90deg, transparent, var(--red-soft), transparent);
+}
+
+.tax-number {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--red-soft);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.tax-number .currency { font-size: 1rem; font-weight: 400; opacity: 0.7; }
+.tax-number .suffix { font-size: 0.85rem; font-weight: 400; color: var(--text-dim); }
+
+.tax-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.tax-card.total {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(248, 113, 113, 0.06), rgba(248, 113, 113, 0.02));
+  border-color: rgba(248, 113, 113, 0.12);
+}
+
+.tax-card.total .tax-number {
+  font-size: 2.6rem;
+}
+
+.tax-footnote {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-align: center;
+  margin-top: 16px;
+  line-height: 1.6;
+}
+
+/* ── THE GAP ── */
+.gap-comparison {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  align-items: stretch;
+  margin-bottom: 20px;
+}
+
+.gap-side {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 32px 24px;
+  position: relative;
+}
+
+.gap-side:first-child {
+  border-radius: 14px 0 0 14px;
+  border-right: none;
+}
+
+.gap-side:last-child {
+  border-radius: 0 14px 14px 0;
+  border-left: none;
+}
+
+.gap-side.upwork::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--red-soft), transparent);
+  opacity: 0.4;
+}
+
+.gap-side.linkedin::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--mint));
+  opacity: 0.5;
+}
+
+.gap-divider {
+  width: 1px;
+  background: var(--border);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gap-divider::after {
+  content: 'vs';
+  position: absolute;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: var(--bg-void);
+  padding: 8px 6px;
+}
+
+.gap-platform {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.gap-side.upwork .gap-platform { color: var(--red-soft); }
+.gap-side.linkedin .gap-platform { color: var(--mint); }
+
+.gap-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gap-list li {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-left: 18px;
+  position: relative;
+  font-weight: 300;
+}
+
+.gap-side.upwork .gap-list li::before {
+  content: '×';
+  position: absolute;
+  left: 0; top: 0;
+  color: var(--red-soft);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.gap-side.linkedin .gap-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0; top: 0;
+  color: var(--mint);
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.gap-bottom-text {
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin-top: 24px;
+  line-height: 1.6;
+}
+
+.gap-bottom-text strong {
+  color: var(--mint);
+  font-weight: 500;
+}
+
+/* ── WHAT WE BUILD ── */
+.build-timeline {
+  position: relative;
+  padding-left: 28px;
+}
+
+.build-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px; bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--mint), var(--cyan), var(--amber));
+  opacity: 0.3;
+}
+
+.build-phase {
+  position: relative;
+  margin-bottom: 32px;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: border-color 0.4s;
+}
+
+.build-phase:hover { border-color: var(--border-active); }
+
+.build-phase::before {
+  content: '';
+  position: absolute;
+  left: -33px; top: 30px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--mint);
+  background: var(--bg-void);
+}
+
+.build-phase:nth-child(2)::before { border-color: var(--cyan); }
+.build-phase:nth-child(3)::before { border-color: var(--amber); }
+
+.phase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+}
+
+.phase-name {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: var(--text-primary);
+}
+
+.phase-time {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: rgba(255,255,255,0.03);
+  padding: 4px 12px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+}
+
+.phase-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.phase-items li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+  font-weight: 300;
+}
+
+.phase-items li::before {
+  content: '▸';
+  position: absolute;
+  left: 0; top: 0;
+  color: var(--mint);
+  font-size: 0.7rem;
+}
+
+.build-phase:nth-child(2) .phase-items li::before { color: var(--cyan); }
+.build-phase:nth-child(3) .phase-items li::before { color: var(--amber); }
+
+/* ── PROOF SECTION ── */
+.proof-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.proof-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--mint), var(--cyan), var(--mint));
+  opacity: 0.6;
+}
+
+.proof-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 28px;
+}
+
+.proof-who {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.proof-time {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mint);
+  opacity: 0.7;
+}
+
+.proof-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.proof-metric {
+  text-align: center;
+  padding: 16px 0;
+}
+
+.proof-before {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+
+.proof-after {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 2rem;
+  color: var(--mint);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.proof-change {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--mint);
+  opacity: 0.6;
+  font-weight: 400;
+}
+
+.proof-label {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  font-weight: 300;
+}
+
+.proof-leads {
+  border-top: 1px solid var(--border);
+  padding-top: 22px;
+  text-align: center;
+}
+
+.proof-leads-title {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--mint);
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.proof-leads-detail {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+.proof-context {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  text-align: center;
+  margin-top: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* ── SECOND PROOF ── */
+.proof-mini {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.proof-mini-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: var(--amber-glow);
+  border: 1px solid rgba(251, 191, 36, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--amber);
+}
+
+.proof-mini-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.proof-mini-text strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.proof-mini-text .highlight {
+  color: var(--amber);
+  font-weight: 500;
+}
+
+/* ── FREE AUDIT SECTION ── */
+.audit-card {
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.06), rgba(34, 211, 238, 0.04), rgba(52, 211, 153, 0.02));
+  border: 2px solid rgba(52, 211, 153, 0.18);
+  border-radius: 18px;
+  padding: 44px 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.audit-card::before {
+  content: '';
+  position: absolute;
+  top: -40%; right: -15%;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.04), transparent 60%);
+  pointer-events: none;
+}
+
+.audit-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mint);
+  background: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.15);
+  border-radius: 100px;
+  padding: 6px 16px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.audit-headline {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+  line-height: 1.3;
+}
+
+.audit-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-weight: 300;
+  max-width: 640px;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.audit-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.audit-item {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 20px 22px;
+  background: rgba(0,0,0,0.15);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s;
+}
+
+.audit-item:last-child { border-bottom: none; }
+.audit-item:hover { background: rgba(0,0,0,0.25); }
+
+.audit-check {
+  width: 46px; height: 46px;
+  border-radius: 12px;
+  background: var(--mint-dim);
+  border: 1px solid rgba(52, 211, 153, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--mint);
+  flex-shrink: 0;
+}
+
+.audit-item-title {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+.audit-item-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  font-weight: 300;
+}
+
+.audit-bottom {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 0.92rem;
+  color: var(--text-accent);
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+  line-height: 1.6;
+}
+
+/* ── WHAT HAPPENS NEXT ── */
+.next-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.next-step {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.next-step:last-child { border-bottom: none; }
+
+.step-num {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  background: var(--mint-dim);
+  border: 1px solid rgba(52, 211, 153, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--mint);
+}
+
+.step-content h3 {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.step-content p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* ── FOOTER ── */
+.footer {
+  text-align: center;
+  padding: 60px 0 20px;
+}
+
+.footer-cta {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 2.4rem;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.footer-cta .accent { color: var(--mint); }
+
+.footer-sub {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.footer-line {
+  width: 40px;
+  height: 1px;
+  background: var(--mint);
+  opacity: 0.3;
+  margin: 0 auto 28px;
+}
+
+.footer-contact {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+  line-height: 1.9;
+}
+
+.footer-contact strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.footer-brand {
+  margin-top: 28px;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* ── VALUE STACK ── */
+.value-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.stack-row {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+  transition: background 0.3s;
+}
+
+.stack-row:last-child { border-bottom: none; }
+
+.stack-row:hover { background: var(--bg-elevated); }
+
+.stack-item {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.stack-icon {
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  background: var(--mint-dim);
+  border: 1px solid rgba(52, 211, 153, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--mint);
+  flex-shrink: 0;
+}
+
+.stack-row:nth-child(6) .stack-icon,
+.stack-row:nth-child(7) .stack-icon {
+  background: var(--amber-glow);
+  border-color: rgba(251, 191, 36, 0.15);
+  color: var(--amber);
+}
+
+.stack-name {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+.stack-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  font-weight: 300;
+}
+
+.stack-effort {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+}
+
+.stack-effort-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--mint);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── CODE BLOCK QUOTE ── */
+.code-quote {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 22px;
+  margin-top: 20px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.code-quote::before {
+  content: '//';
+  color: var(--text-dim);
+  margin-right: 8px;
+}
+
+.code-quote .comment { color: var(--text-dim); }
+.code-quote .keyword { color: var(--mint); }
+.code-quote .string { color: var(--amber); }
+.code-quote .number { color: var(--cyan); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  html { font-size: 16px; }
+  .proposal { padding: 20px 16px 60px; }
+  .header { padding: 50px 0 50px; }
+  .header h1 { font-size: 2.3rem; }
+  .header-tagline { font-size: 1.15rem; }
+  .section { margin-bottom: 44px; }
+  .section-title { font-size: 1.6rem; }
+  .tax-grid { grid-template-columns: 1fr; gap: 10px; }
+  .tax-number { font-size: 1.7rem; }
+  .tax-card.total .tax-number { font-size: 2rem; }
+  .gap-comparison { grid-template-columns: 1fr; gap: 0; }
+  .gap-side:first-child { border-radius: 14px 14px 0 0; border-right: 1px solid var(--border); border-bottom: none; }
+  .gap-side:last-child { border-radius: 0 0 14px 14px; border-left: 1px solid var(--border); border-top: none; }
+  .gap-divider { width: 100%; height: 1px; }
+  .gap-divider::after { padding: 6px 10px; }
+  .proof-metrics { grid-template-columns: 1fr; gap: 16px; }
+  .proof-after { font-size: 1.7rem; }
+  .proof-header { flex-direction: column; gap: 6px; }
+  .proof-mini { grid-template-columns: 1fr; text-align: center; }
+  .audit-card { padding: 30px 20px; }
+  .audit-headline { font-size: 1.5rem; }
+  .footer-cta { font-size: 1.9rem; }
+  .phase-header { flex-direction: column; gap: 6px; }
+  .build-timeline { padding-left: 22px; }
+}
+
+@media (max-width: 400px) {
+  html { font-size: 15px; }
+  .header h1 { font-size: 2rem; }
+}
+
+/* ── PRINT ── */
+@media print {
+  body { background: #fff; color: #1a1a1a; }
+  body::before, .grid-bg, .orbs { display: none; }
+  .tax-card, .proof-card, .build-phase, .gap-side, .audit-card, .proof-mini { border-color: #e0e0e0; background: #fafafa; }
+  .audit-card { background: #f0fdf4; border-color: #34d399; }
+  .tax-number, .proof-after { color: #059669; }
+  .section-num { color: #6b7280; }
+  * { animation: none !important; transition: none !important; }
+  .section { opacity: 1 !important; transform: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Ambient Background -->
+<div class="grid-bg"></div>
+<div class="orbs">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+
+<div class="proposal">
+
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div class="header-badge">Proposal</div>
+    <div class="header-prepared">Prepared for Ramiz Theba — March 2026</div>
+    <h1>Your Upwork Reviews<br>Are <span class="name">Invisible.</span></h1>
+    <p class="header-tagline">150+ projects. Top Rated Plus. Zero inbound from LinkedIn.</p>
+    <div class="header-line"></div>
+  </header>
+
+  <!-- ── 01: THE UPWORK TAX ── -->
+  <section class="section" id="s1">
+    <div class="section-num">01 — The Upwork Tax</div>
+    <div class="section-title">You're Paying to Stay Invisible</div>
+
+    <div class="tax-grid">
+      <div class="tax-card">
+        <div class="tax-number">10-20<span class="suffix">%</span></div>
+        <div class="tax-label">Upwork's service fee on every contract. On Top Rated Plus accounts, that's thousands per year.</div>
+      </div>
+      <div class="tax-card">
+        <div class="tax-number"><span class="currency">$</span>0.15<span class="suffix">/each</span></div>
+        <div class="tax-label">Per connect. Boosted proposals cost more. Just to apply, you pay — even when you don't win.</div>
+      </div>
+      <div class="tax-card">
+        <div class="tax-number">5+<span class="suffix"> hrs/week</span></div>
+        <div class="tax-label">Writing proposals that 90% of clients never read. That's billable time burned on hope.</div>
+      </div>
+      <div class="tax-card">
+        <div class="tax-number">0<span class="suffix"> control</span></div>
+        <div class="tax-label">Upwork owns the client relationship. They change fees, throttle visibility, or suspend accounts overnight.</div>
+      </div>
+      <div class="tax-card total">
+        <div class="tax-number"><span class="currency">$</span>15,000-25,000<span class="suffix">/year</span></div>
+        <div class="tax-label">Estimated total cost of staying Upwork-only: fees + connects + proposal time + missed direct deals. A salary-sized leak.</div>
+      </div>
+    </div>
+
+    <div class="tax-footnote">
+      Based on data from Top Rated freelancers earning $50-100/hr. Includes platform fees, connects, boosted proposals, and opportunity cost of proposal writing time.
+    </div>
+  </section>
+
+  <!-- ── 02: THE GAP ── -->
+  <section class="section" id="s2">
+    <div class="section-num">02 — The Gap</div>
+    <div class="section-title">Same Expert. Two Different Stories.</div>
+
+    <div class="gap-comparison">
+      <div class="gap-side upwork">
+        <div class="gap-platform">On Upwork</div>
+        <ul class="gap-list">
+          <li>150+ projects completed</li>
+          <li>Top Rated Plus badge</li>
+          <li>8+ years of WordPress, Elementor Pro, WooCommerce</li>
+          <li>Clients trust you enough to leave 5-star reviews</li>
+          <li>You compete against 50+ proposals per job</li>
+        </ul>
+      </div>
+      <div class="gap-divider"></div>
+      <div class="gap-side linkedin">
+        <div class="gap-platform">On LinkedIn</div>
+        <ul class="gap-list">
+          <li>None of that proof is visible</li>
+          <li>No content showing your expertise</li>
+          <li>Profile reads like a resume, not a landing page</li>
+          <li>Invisible to direct clients searching for WordPress experts</li>
+          <li>Zero inbound — while competitors build pipelines here</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gap-bottom-text">
+      Your Upwork profile proves you can do the work.<br>
+      LinkedIn is where clients <strong>find you without a proposal.</strong>
+    </div>
+  </section>
+
+  <!-- ── 03: WHAT WE BUILD ── -->
+  <section class="section" id="s3">
+    <div class="section-num">03 — What We Build</div>
+    <div class="section-title">A LinkedIn System That Brings Clients to You</div>
+
+    <div class="build-timeline">
+      <div class="build-phase">
+        <div class="phase-header">
+          <span class="phase-name">The Foundation</span>
+          <span class="phase-time">Week 1-2</span>
+        </div>
+        <ul class="phase-items">
+          <li>Full profile overhaul — headline, about, experience rewritten for conversion, not resumes</li>
+          <li>Featured section with your best WordPress/WooCommerce case studies and proof</li>
+          <li>SEO optimization so you appear when people search "WordPress developer" or "WooCommerce expert"</li>
+          <li>AI-search ready — so tools like ChatGPT and Perplexity recommend you when prospects ask</li>
+          <li>Custom banner design matching your professional brand</li>
+        </ul>
+      </div>
+
+      <div class="build-phase">
+        <div class="phase-header">
+          <span class="phase-name">The Authority Engine</span>
+          <span class="phase-time">Week 2-8</span>
+        </div>
+        <ul class="phase-items">
+          <li>3 posts per week in your authentic voice — real project stories, WordPress insights, WooCommerce wins</li>
+          <li>Every post designed to attract direct clients, not just likes</li>
+          <li>Strategic commenting on your Dream 100 targets (agency owners, startup founders, e-commerce brands)</li>
+          <li>Content built from your 8 years of real project experience — not generic advice</li>
+          <li>Mobile-first, algorithm-optimized formatting for maximum reach</li>
+        </ul>
+      </div>
+
+      <div class="build-phase">
+        <div class="phase-header">
+          <span class="phase-name">The Lead Machine</span>
+          <span class="phase-time">Week 4+</span>
+        </div>
+        <ul class="phase-items">
+          <li>Inbound leads from profile views + content — people DM you for projects</li>
+          <li>DM management for warm prospects who engage with your content</li>
+          <li>Referral system — happy LinkedIn connections send you clients</li>
+          <li>Track everything: profile views → leads → conversations → projects closed</li>
+          <li>Goal: 3-5 direct client inquiries per month, at your full rate, zero platform fees</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="code-quote">
+      <span class="comment">The system runs even when you're building sites.</span><br>
+      <span class="keyword">result</span> = <span class="string">"clients find you"</span> — not the other way around.
+    </div>
+  </section>
+
+  <!-- ── 04: PROOF ── -->
+  <section class="section" id="s4">
+    <div class="section-num">04 — Proof</div>
+    <div class="section-title">What Happened When a Developer Like You Tried This</div>
+
+    <div class="proof-card">
+      <div class="proof-header">
+        <span class="proof-who">Backend Developer — 634 Followers, Surat</span>
+        <span class="proof-time">6 Weeks</span>
+      </div>
+      <div class="proof-metrics">
+        <div class="proof-metric">
+          <div class="proof-before">341</div>
+          <div class="proof-after">86,861</div>
+          <div class="proof-change">+25,372%</div>
+          <div class="proof-label">Search Appearances</div>
+        </div>
+        <div class="proof-metric">
+          <div class="proof-before">37</div>
+          <div class="proof-after">1,054</div>
+          <div class="proof-change">+2,748%</div>
+          <div class="proof-label">Profile Views</div>
+        </div>
+        <div class="proof-metric">
+          <div class="proof-before">0</div>
+          <div class="proof-after">5</div>
+          <div class="proof-change">Inbound</div>
+          <div class="proof-label">Qualified Leads</div>
+        </div>
+      </div>
+      <div class="proof-leads">
+        <div class="proof-leads-title">Belgium · UK · Silicon Valley · Agoda</div>
+        <div class="proof-leads-detail">International inbound leads — without a single proposal or connect spent</div>
+      </div>
+      <div class="proof-context">
+        Same situation: Indian developer, small account, zero LinkedIn presence.<br>
+        First post hit 27,829 impressions on a 634-follower account. Recruiters from JPMorgan, Citi, and European startups viewed his profile.
+      </div>
+    </div>
+
+    <div class="proof-mini">
+      <div class="proof-mini-icon">02</div>
+      <div class="proof-mini-text">
+        <strong>Jay Gorfad</strong> — went from zero LinkedIn presence to <span class="highlight">1,000+ profile views/month</span> and <span class="highlight">15 paying clients in 4 months</span>. No ads. No cold outreach. Just a system that compounds.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 05: WHAT YOU GET ── -->
+  <section class="section" id="s5">
+    <div class="section-num">05 — What You Get</div>
+    <div class="section-title">The Full System, Not Just "LinkedIn Help"</div>
+
+    <div class="value-stack">
+      <div class="stack-row">
+        <div class="stack-item">
+          <span class="stack-icon">01</span>
+          <div>
+            <div class="stack-name">Complete Profile Transformation</div>
+            <div class="stack-desc">Headline, about, experience, featured section — rewritten for conversion. Custom banner. SEO + AI-search optimized.</div>
+          </div>
+        </div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-item">
+          <span class="stack-icon">02</span>
+          <div>
+            <div class="stack-name">12 Posts Per Month (3x/week)</div>
+            <div class="stack-desc">Written in your voice from your real project stories. WordPress insights, WooCommerce wins, Elementor builds. Not generic advice.</div>
+          </div>
+        </div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-item">
+          <span class="stack-icon">03</span>
+          <div>
+            <div class="stack-name">Comment Engine on Dream 100 Targets</div>
+            <div class="stack-desc">Daily strategic engagement on posts by agency owners, startup founders, and e-commerce brands who hire WordPress developers.</div>
+          </div>
+        </div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-item">
+          <span class="stack-icon">04</span>
+          <div>
+            <div class="stack-name">DM Management for Warm Prospects</div>
+            <div class="stack-desc">When people reach out after seeing your content, I handle the initial conversation and qualify them for you.</div>
+          </div>
+        </div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-item">
+          <span class="stack-icon">05</span>
+          <div>
+            <div class="stack-name">Monthly Performance Report</div>
+            <div class="stack-desc">Profile views, search appearances, content performance, leads generated — data, not fluff.</div>
+          </div>
+        </div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-item">
+          <span class="stack-icon">+</span>
+          <div>
+            <div class="stack-name">Onboarding Deep Dive (60 min)</div>
+            <div class="stack-desc">I capture your voice, your best stories, your ideal client profile. This is the only hour you spend. I handle everything else.</div>
+          </div>
+        </div>
+      </div>
+      <div class="stack-row">
+        <div class="stack-item">
+          <span class="stack-icon">+</span>
+          <div>
+            <div class="stack-name">Competitor Intelligence Report</div>
+            <div class="stack-desc">Analysis of WordPress freelancers in your space who are already using LinkedIn. Their gaps become your advantage.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack-effort">
+      <span class="stack-effort-label">Your time commitment:</span> 1 hour onboarding + 10 min/week to approve content. That's it.
+    </div>
+  </section>
+
+  <!-- ── 06: FREE AUDIT ── -->
+  <section class="section" id="s6">
+    <div class="section-num">06 — Free Audit</div>
+    <div class="section-title">Let Me Show You Exactly What's Broken</div>
+
+    <div class="audit-card">
+      <div class="audit-badge">No Cost. No Catch.</div>
+      <div class="audit-headline">I'll audit your LinkedIn profile for free.</div>
+      <div class="audit-desc">
+        I'll go through your entire LinkedIn presence and tell you exactly what's holding you back — and where I can help. No pitch, no pressure. Just a clear diagnosis.
+      </div>
+
+      <div class="audit-checklist">
+        <div class="audit-item">
+          <span class="audit-check">01</span>
+          <div>
+            <div class="audit-item-title">Profile Score (0-100)</div>
+            <div class="audit-item-desc">How your headline, about section, featured items, and experience stack up against profiles that actually generate inbound leads.</div>
+          </div>
+        </div>
+        <div class="audit-item">
+          <span class="audit-check">02</span>
+          <div>
+            <div class="audit-item-title">Search Visibility Analysis</div>
+            <div class="audit-item-desc">Are you showing up when someone searches "WordPress developer" or "WooCommerce expert"? I'll show you exactly where you're invisible.</div>
+          </div>
+        </div>
+        <div class="audit-item">
+          <span class="audit-check">03</span>
+          <div>
+            <div class="audit-item-title">AI Discoverability Check</div>
+            <div class="audit-item-desc">94% of B2B buyers use AI tools for research. I'll check if ChatGPT, Perplexity, or Copilot would ever recommend you. Right now, probably not.</div>
+          </div>
+        </div>
+        <div class="audit-item">
+          <span class="audit-check">04</span>
+          <div>
+            <div class="audit-item-title">Competitor Gap Report</div>
+            <div class="audit-item-desc">What other WordPress freelancers in your space are doing on LinkedIn — and the gaps you can exploit to stand out.</div>
+          </div>
+        </div>
+        <div class="audit-item">
+          <span class="audit-check">05</span>
+          <div>
+            <div class="audit-item-title">The Fix — Personalized Roadmap</div>
+            <div class="audit-item-desc">Specific, actionable steps. Not vague advice. What to change, in what order, and why. Whether you work with me or not.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="audit-bottom">
+        Takes 15 minutes of your time. You'll walk away knowing exactly what's costing you direct clients — and how to fix it.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer section" id="s7">
+    <div class="footer-cta">Want the free audit,<br><span class="accent">Ramiz?</span></div>
+    <div class="footer-sub">Just reply "yes" and I'll send it over within 24 hours.</div>
+    <div class="footer-line"></div>
+    <div class="footer-contact">
+      <strong>Yash Limbachiya</strong><br>
+      Forbidden Linker — LinkedIn Lead Generation & Revenue Systems<br>
+      <span style="color: var(--text-dim); font-family: var(--mono); font-size: 0.78rem;">Reply to this message to get started</span>
+    </div>
+    <div class="footer-brand">Forbidden Linker</div>
+  </footer>
+
+</div>
+
+<script>
+// ── Scroll Reveal ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.section').forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
